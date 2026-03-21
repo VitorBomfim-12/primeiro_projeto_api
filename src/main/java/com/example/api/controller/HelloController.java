@@ -1,27 +1,32 @@
 package com.example.api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.api.service.HelloService;
 
+import com.example.api.model.Transacao;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.api.service.InsertTransaction;
 
 
 @RestController
 @RequestMapping("/api")
 public class HelloController {
     
-    private final HelloService helloService;
-    
-    public HelloController(HelloService helloService){
-        this.helloService = helloService;
+    private final InsertTransaction insertTransaction;
+
+    public HelloController(InsertTransaction insertTransaction){
+      this.insertTransaction = insertTransaction;
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return helloService.getHello();
-    }
+    @PostMapping("/transacao")
+    public void criarTransacao(@RequestBody Transacao transacao){
+        insertTransaction.adiciona(transacao);
 
     
+}
 }

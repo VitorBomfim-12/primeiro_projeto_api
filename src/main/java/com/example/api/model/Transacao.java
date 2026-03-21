@@ -2,12 +2,12 @@ package com.example.api.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class transacao {
+public class Transacao {
     private BigDecimal valor;
     private String descricao;
     private LocalDate dataTransacao;
 
-    public transacao(BigDecimal valor, String descricao, LocalDate dataTransacao) {
+    public Transacao(BigDecimal valor, String descricao, LocalDate dataTransacao) {
         this.valor = valor;
         this.descricao = descricao;
         this.dataTransacao = dataTransacao;
@@ -29,12 +29,13 @@ public class transacao {
         this.descricao = descricao;
     }
 
-    public LocalDate getdataTransaca(){
+    public LocalDate getdataTransacao(){
         return this.dataTransacao;
     }
-    
-    public void setdataTransaca(LocalDate dataTransacao){
+
+    public void setdataTransacao(LocalDate dataTransacao){
         this.dataTransacao = dataTransacao;
     }
 
+   
 }
